@@ -21,7 +21,11 @@ class Calculator
 
     public function div(int $a, int $b)
     {
-        return $a / $b;
+        if ($b == 0) {
+            return null;
+        } else {
+            return $a / $b;
+        }
     }
 
     public function avg(array $tab)

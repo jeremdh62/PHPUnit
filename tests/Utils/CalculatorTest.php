@@ -55,11 +55,21 @@ class CalculatorTest extends TestCase
     }
 
     /** @test */
+    public function can_divise_zero_two_integers()
+    {
+        $calculator = new Calculator();
+
+        $result = $calculator->div(4, 0);
+
+        $this->assertNull($result);
+    }
+
+    /** @test */
     public function can_avg_two_integers()
     {
         $calculator = new Calculator();
 
-        $result = $calculator->avg([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        $result = $calculator->avg(["1", 2, 3, 4, 5, 6, 7, 8, 9]);
 
         $this->assertSame(5, $result);
     }
